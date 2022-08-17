@@ -1,0 +1,13 @@
+The original PECANS package is available at https://doi.org/10.5281/zenodo.3386652 (Laughner, 2019)
+
+We add two extra reactions to facilitate HO2 uptake by PM2.5, and HOx production from ozone. Check the 'nox_voc_ox.eqn' under pecans/Mechanisms/ to see the changes. 
+
+I made all the sinks to H2O2 since it does not go on to have other reactions.
+
+The PM concentration should be in surface area concentration (m2/m3). Assuming 0.6 um radius for all particles roughly converts 20 ug/m3 to 0.0001 m2/m3 (density as 1 g/cm3).
+
+You can type these commands to get the base simulation results:
+$  python build_pecans.py -p alpha=0.04 (then select option 4),
+$  python run_pecans.py nox_voc_ox -t emis
+
+Change the inputs in pecans_config.cfg and play!
